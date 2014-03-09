@@ -1,0 +1,493 @@
+﻿
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <ul id="filtersTab" class="nav nav-tabs">
+                <li class="active"><a href="#manageTemplates_TemplateView" data-toggle="tab">Manage Templates - Template View</a></li>
+                <li class=""><a href="#manageTemplates_GridView" data-toggle="tab">Manage Templates - Grid View</a></li>
+                <li class=""><a href="#createEditTemplatedPagesAndTemplates" data-toggle="tab">Create/Edit Templated Pages and Templates</a></li>
+            </ul>
+            <div id="filtersTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="manageTemplates_TemplateView">
+                    <!-- manageTemplates_TemplateView -->
+
+                    <div class="row-fluid">
+                        <div class="span1">
+                        </div>
+                        <div class="span3">
+                            <p><b>Filter By Team</b></p>
+                            <p>
+                                <select data-bind="options: managePageTemplatesTeamList, optionsText: 'Title', optionsValue: 'Id', value: managePageTemplatesSelectedTeam" size="10"></select>
+                            </p>
+                        </div>
+                        <div class="span3">
+                            <p><b>Filter By Console Page</b></p>
+                            <p>
+                                <select data-bind="options: managePageTemplatesPageTemplateList, optionsText: 'Title', optionsValue: 'Id', value: selectedTemplatedPage" size="10"></select>
+                            </p>
+
+                        </div>
+                        <div class="span4">
+                            <div data-bind="visible: showPageStructureTemplateDiv">
+                                <p><b>Current Page Structure Template: <span style="color: green" data-bind="text: pageStructureTemplateTitle"></span></b></p>
+                                <select data-bind="options: allPageStructureTemplatesList,
+    optionsValue: 'Id',
+    optionsText: 'Title',
+    value: selectedPageStructureTemplate,
+    optionsCaption: 'Choose New Page Structure Template...'">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="span1">
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="row-fluid">
+
+                        <div class="span1">
+                        </div>
+
+                        <div class="span10">
+
+                            <!-- ko template: {name: pageStructureTemplateUrl } -->
+                            <!-- /ko -->
+
+                            <script type="text/html" id="edit-template-section1">
+                                <div class="well well-large">
+                                    <h2><i class="icon-wrench"></i><b>Section 1</b></h2>
+                                    <p><b>Current Template: <span style="color: green" data-bind="text: templateSection1_SelectedTemplateTitle" /></b></p>
+                                    <p>
+                                        <b>Change Template: 
+                                            <select data-bind="options: allSectionTemplatesList,
+    optionsValue: 'Title',
+    optionsText: 'Title',
+    value: templateSection1_SelectedTemplate,
+    optionsCaption: 'Choose New Section Template...'">
+                                            </select>
+                                        </b></p>
+                                    <p>
+                                        <b>IsVisible?:
+                                            <input type="checkbox" data-bind="checked: templateSection1_IsVisible" />
+                                        </b>
+                                    </p>
+                                </div>
+                            </script>
+                            
+                            <script type="text/html" id="edit-template-section2">
+                                <div class="well well-large">
+                                    <h2><i class="icon-wrench"></i><b>Section 2</b></h2>
+                                    <p><b>Current Template: <span style="color: green" data-bind="text: templateSection2_SelectedTemplateTitle" /></b></p>
+                                    <p>
+                                        <b>Change Template: 
+                                            <select data-bind="options: allSectionTemplatesList,
+    optionsValue: 'Title',
+    optionsText: 'Title',
+    value: templateSection2_SelectedTemplate,
+    optionsCaption: 'Choose New Section Template...'">
+                                            </select>
+                                        </b></p>
+                                    <p>
+                                        <b>IsVisible?:
+                                            <input type="checkbox" data-bind="checked: templateSection2_IsVisible" />
+                                        </b>
+                                    </p>
+                                </div>
+                            </script>
+                            
+                            <script type="text/html" id="edit-template-section3">
+                                <div class="well well-large">
+                                    <h2><i class="icon-wrench"></i><b>Section 3</b></h2>
+                                    <p><b>Current Template: <span style="color: green" data-bind="text: templateSection3_SelectedTemplateTitle" /></b></p>
+                                    <p>
+                                        <b>Change Template: 
+                                            <select data-bind="options: allSectionTemplatesList,
+    optionsValue: 'Title',
+    optionsText: 'Title',
+    value: templateSection3_SelectedTemplate,
+    optionsCaption: 'Choose New Section Template...'">
+                                            </select>
+                                        </b></p>
+                                    <p>
+                                        <b>IsVisible?:
+                                            <input type="checkbox" data-bind="checked: templateSection3_IsVisible" />
+                                        </b>
+                                    </p>
+                                </div>
+                            </script>
+
+                            <script type="text/html" id="edit-template-section4">
+                                <div class="well well-large">
+                                    <h2><i class="icon-wrench"></i><b>Section 4</b></h2>
+                                    <p><b>Current Template: <span style="color: green" data-bind="text: templateSection4_SelectedTemplateTitle" /></b></p>
+                                    <p>
+                                        <b>Change Template: 
+                                            <select data-bind="options: allSectionTemplatesList,
+    optionsValue: 'Title',
+    optionsText: 'Title',
+    value: templateSection4_SelectedTemplate,
+    optionsCaption: 'Choose New Section Template...'">
+                                            </select>
+                                        </b></p>
+                                    <p>
+                                        <b>IsVisible?:
+                                            <input type="checkbox" data-bind="checked: templateSection4_IsVisible" />
+                                        </b>
+                                    </p>
+                                </div>
+                            </script>
+
+                            <script type="text/html" id="edit-template-section5">
+                                <div class="well well-large">
+                                    <h2><i class="icon-wrench"></i><b>Section 5</b></h2>
+                                    <p><b>Current Template: <span style="color: green" data-bind="text: templateSection5_SelectedTemplateTitle" /></b></p>
+                                    <p>
+                                        <b>Change Template: 
+                                            <select data-bind="options: allSectionTemplatesList,
+    optionsValue: 'Title',
+    optionsText: 'Title',
+    value: templateSection5_SelectedTemplate,
+    optionsCaption: 'Choose New Section Template...'">
+                                            </select>
+                                        </b></p>
+                                    <p>
+                                        <b>IsVisible?:
+                                            <input type="checkbox" data-bind="checked: templateSection5_IsVisible" />
+                                        </b>
+                                    </p>
+                                </div>
+                            </script>
+
+                            <script type="text/html" id="edit-template-section6">
+                                <div class="well well-large">
+                                    <h2><i class="icon-wrench"></i><b>Section 6</b></h2>
+                                    <p><b>Current Template: <span style="color: green" data-bind="text: templateSection6_SelectedTemplateTitle" /></b></p>
+                                    <p>
+                                        <b>Change Template: 
+                                            <select data-bind="options: allSectionTemplatesList,
+    optionsValue: 'Title',
+    optionsText: 'Title',
+    value: templateSection6_SelectedTemplate,
+    optionsCaption: 'Choose New Section Template...'">
+                                            </select>
+                                        </b></p>
+                                    <p>
+                                        <b>IsVisible?:
+                                            <input type="checkbox" data-bind="checked: templateSection6_IsVisible" />
+                                        </b>
+                                    </p>
+                                </div>
+                            </script>
+
+                            <script type="text/html" id="edit-template-section7">
+                                <div class="well well-large">
+                                    <h2><i class="icon-wrench"></i><b>Section 7</b></h2>
+                                    <p><b>Current Template: <span style="color: green" data-bind="text: templateSection7_SelectedTemplateTitle" /></b></p>
+                                    <p>
+                                        <b>Change Template: 
+                                            <select data-bind="options: allSectionTemplatesList,
+    optionsValue: 'Title',
+    optionsText: 'Title',
+    value: templateSection7_SelectedTemplate,
+    optionsCaption: 'Choose New Section Template...'">
+                                            </select>
+                                        </b></p>
+                                    <p>
+                                        <b>IsVisible?:
+                                            <input type="checkbox" data-bind="checked: templateSection7_IsVisible" />
+                                        </b>
+                                    </p>
+                                </div>
+                            </script>
+
+                            <script type="text/html" id="edit-template-section8">
+                                <div class="well well-large">
+                                    <h2><i class="icon-wrench"></i><b>Section 8</b></h2>
+                                    <p><b>Current Template: <span style="color: green" data-bind="text: templateSection8_SelectedTemplateTitle" /></b></p>
+                                    <p>
+                                        <b>Change Template: 
+                                            <select data-bind="options: allSectionTemplatesList,
+    optionsValue: 'Title',
+    optionsText: 'Title',
+    value: templateSection8_SelectedTemplate,
+    optionsCaption: 'Choose New Section Template...'">
+                                            </select>
+                                        </b></p>
+                                    <p>
+                                        <b>IsVisible?:
+                                            <input type="checkbox" data-bind="checked: templateSection8_IsVisible" />
+                                        </b>
+                                    </p>
+                                </div>
+                            </script>
+
+                            <script type="text/html" id="edit-holding-template">
+                                <div class="well well-large">
+                                    <h2><i class="icon-wrench"></i>
+                                        Select a Site Structure Template</h2>
+                                </div>
+                            </script>
+
+
+                        </div>
+
+                        <div class="span1">
+                        </div>
+
+                        <hr />
+
+                        <div class="row-fluid">
+                            <div class="span1"></div>
+                            <div class="span10">
+                                <button class="btn btn-primary pull-right" title="Save Page Template Changes" data-bind="click: click_UpdatePageTemplates_TemplatesView"><i class="icon-pencil icon-white"></i> Save Page Template Changes</button>
+                            </div>
+                            <div class="span1"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- end #manageTemplates_TemplateView -->
+                </div>
+                
+                <div class="tab-pane fade in" id="manageTemplates_GridView">
+
+                    <!-- managePageTemplatesGridView -->
+
+                    <div class="row-fluid">
+                        <div class="span1">
+                        </div>
+                        <div class="span3">
+                            <p>Filter By Team</p>
+                            <p>
+                                <select data-bind="options: teamList, optionsText: 'Title', optionsValue: 'Id', value: selectedTeam" size="10"></select>
+                            </p>
+                        </div>
+
+                        <div class="span7">
+                            @*<div style="overflow: auto; width: auto; height: 500px">*@
+                            <table class="table table-condensed table-striped table-bordered table-hover dataTables_paginate">
+                                <caption>Page Templates</caption>
+                                <thead>
+                                    <tr>
+
+                                        <th>Templated Page</th>
+                                        <th>Team</th>
+                                        <th>Page Structure Template?</th>
+                                        <th>Current Template</th>
+                                        <th>IsVisible?</th>
+ 
+                                    </tr>
+                                </thead>
+                                
+                                <tbody data-bind="template: { foreach: pageTemplateList }">
+                                    <tr>
+                                        <td>
+                                            <span data-bind="text: $data.TemplatedPage"></span>
+                                        </td>
+                                        <td>
+                                            <span data-bind="text: $data.TeamTitle"></span>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" data-bind="checked: $data.IsSiteStructureTemplate" readonly="readonly" disabled="disabled" />
+                                        </td>
+                                        <td>
+                                            <select data-bind="options: $data.Templates,
+    optionsValue: 'Title',
+    optionsText: 'Title',
+    value: $data.TemplateTitle,
+    optionsCaption: 'Choose New Template...'">
+                                            </select>
+
+                                        </td>
+                                       
+                                        <td>
+                                            <!-- ko if: $data.IsSiteStructureTemplate === true -->
+                                            <input type="checkbox" data-bind="checked: $data.IsVisible" readonly="readonly" disabled="disabled" />
+                                            <!-- /ko -->
+                                            <!-- ko if: $data.IsSiteStructureTemplate === false -->
+                                            <input type="checkbox" data-bind="checked: $data.IsVisible" />
+                                            <!-- /ko -->
+                                        </td>
+
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn btn-primary pull-right" title="Save Page Template Changes" data-bind="click: click_UpdatePageTemplates_GridView"><i class="icon-pencil icon-white"></i> Save Page Template Changes</button>
+                            @*</div>*@
+                        </div>
+
+                        <div class="span1">
+                        </div>
+                    </div>
+
+                    <!-- end managePageTemplatesGridView -->
+                </div>
+
+                <div class="tab-pane fade in" id="createEditTemplatedPagesAndTemplates">
+
+                    <!-- createEditTemplatedPagesAndTemplates -->
+
+                    <div class="row-fluid">
+
+                        <div class="span2">
+                        </div>
+
+                        <div class="span8">
+                            <div style="overflow: auto; width: auto; height: 300px">
+                                <table class="table table-condensed table-striped table-bordered table-hover dataTables_paginate">
+                                    <caption>Templated Pages</caption>
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 30%">Title</th>
+                                            <th style="width: 30%">ViewModel</th>
+                                            <th style="width: 20px">Add To Top Menu?</th>
+                                            @*<th style="width: 20px">Is Separate Browser Tab?</th>*@
+                                            <th style="width: 20%"></th>
+                                        </tr>
+                                    </thead>
+                                
+                                    <tbody data-bind="template: { foreach: templatedPageList }">
+                                    
+                                        <!-- ko if: $data.PageTitle === 'Home' -->
+                                        <tr>
+                                            <td>
+                                                <span data-bind="text: $data.PageTitle" />
+                                            </td>
+                                            <td>
+                                                <span data-bind="text: $data.ViewModel" />
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" data-bind="checked: $data.IsMenuLinkVisible" disabled="disabled" />
+                                            </td>
+                                            @*<td>
+                                                <input type="checkbox" data-bind="checked: $data.IsSeparateBrowserTab" disabled="disabled" />
+                                            </td>*@
+                                            <td>
+                                                -
+                                            </td>
+                                        </tr>
+                                        <!-- /ko -->
+                                        <!-- ko if: $data.PageTitle !== 'Home' -->
+                                        <tr>
+                                            <td>
+                                                <input type="text" data-bind="value: $data.PageTitle" style="width: 250px" />
+                                            </td>
+                                            <td>
+                                                <input type="text" data-bind="value: $data.ViewModel" style="width: 250px" />
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" data-bind="checked: $data.IsMenuLinkVisible" /> 
+                                            </td>
+                                            @*<td>
+                                                <input type="checkbox" data-bind="checked: $data.IsSeparateBrowserTab" /> 
+                                            </td>*@
+                                            <td>
+                                                <a href="#" title="Update" class="btn btn-primary" data-bind="click: $parent.click_TemplatedPage_Update"><i class="icon-pencil icon-white"></i> Update</a>
+                                                <a href="#" title="Delete" class="btn btn-primary" data-bind="click: $parent.click_TemplatedPage_Delete"><i class="icon-trash icon-white"></i> Delete</a>
+                                            </td>
+                                        
+                                        </tr>
+                                        <!-- /ko -->
+                                    </tbody>
+                                </table>
+                                <a href="#" id="btnCreateNewTemplatedPage" title="Create New Templated Page" class="btn btn-primary pull-right" data-toggle="popover" data-bind="click: show_CreateNewTemplatedPagePopup"><i class="icon-pencil icon-white"></i> Create New Templated Page</a>
+
+                            </div>
+                        </div>
+
+                        <div class="span2">
+                        </div>
+
+                    </div>
+
+                    <hr />
+
+                    <div class="row-fluid">
+                        <div class="span1">
+                        </div>
+
+                        <div class="span10">
+                            
+                            
+                            <small><b>Note: 'After Template Render Function' - Only Required when JQuery needs to bind some DOM events after the HTML has been 
+                                       loaded into the Template Place Holder, and is not used at all if the Template is a 'Page Structure Template.' Place all 
+                                       'After Template Render Functions' in templateAfterRenderDomFunctions.js</b></small>
+                            
+                
+
+                            <div style="overflow: auto; height: 500px">
+                                <table class="table table-condensed table-striped table-bordered table-hover dataTables_paginate">
+                                    <caption>Templates</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Url</th>
+                                            <th>Is Page Structure Template?</th>
+                                            <th>After Template Render Function</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="template: { foreach: templateList }">
+                                    
+                                        <!-- ko if: $parent.CheckTemplateNotForEdit($data.Title) -->
+                                        <tr>
+                                            <td>
+                                                <span data-bind="text: $data.Title" />
+                                            </td>
+                                            <td>
+                                                <span data-bind="text: $data.Url" />
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" data-bind="checked: $data.IsPageStructureTemplate" disabled="disabled" />
+                                            </td>
+                                            <td>
+                                                -
+                                            </td>
+                                        
+                                            <td>
+                                                -
+                                            </td>
+                                        </tr>
+                                        <!-- /ko -->
+                                        <!-- ko if: !$parent.CheckTemplateNotForEdit($data.Title)  -->
+                                        <tr>
+                                            <td>
+                                                <input type="text" data-bind="value: $data.Title" />
+                                            </td>
+                                            <td>
+                                                <input type="text" data-bind="value: $data.Url" />
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" data-bind="checked: $data.IsPageStructureTemplate" />
+                                            </td>
+                                            <td>
+                                                <input type="text" data-bind="value: $data.AfterRenderDomFunction" />
+                                            </td>
+                                            <td>
+                                                <a href="#" title="Update" class="btn btn-primary" data-bind="click: $parent.click_Template_Update"><i class="icon-pencil icon-white"></i> Update</a>
+                                                <a href="#" title="Delete" class="btn btn-primary" data-bind="click: $parent.click_Template_Delete"><i class="icon-trash icon-white"></i> Delete</a>
+                                            </td>
+                                        </tr>
+                                        <!-- /ko -->
+                                    </tbody>
+                                </table>
+                                <a href="#" id="btnCreateNewTemplate" title="Create new Template" class="btn btn-primary pull-right" data-toggle="popover" data-bind="click: show_CreateNewTemplatePopup"><i class="icon-pencil icon-white"></i> Create new Template</a>
+                            </div>
+                        </div>
+
+                        <div class="span1">
+                        </div>
+                    </div>
+
+                    <!-- end createEditTemplatedPagesAndTemplates -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+

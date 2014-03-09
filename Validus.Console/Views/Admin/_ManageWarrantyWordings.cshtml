@@ -1,0 +1,195 @@
+﻿@model Validus.Models.WarrantyWording
+
+@*<h4><span data-bind="text: Title"> </span></h4>*@
+
+<div class="container-fluid">
+
+    <div class="row-fluid">
+        <div class="span4">
+            <a href="#" title="Create WarrantyWording" data-bind="click: click_OpenCreateEditWarrantyWordingModal_Create" class="btn btn-primary"><i class="icon-plus-sign icon-white"></i>Create New WarrantyWording</a>
+            <hr />
+        </div>
+    </div>
+
+    <div class="span6">
+        <div data-bind="pageGrid: ConsoleApp.vmManageWarrantyWordings.allWarrantyWordingsList,
+    columns: [{ headerText: 'Title', rowText: 'Title' }],
+    caption: 'All Subjectivities',
+    pageGridTemplate: 'tableAllWarrantyWordingList'">
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <hr />
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <!-- span -->
+        <div class="span5">
+            <div class="row-fluid">
+                <select data-bind="options: teamList, optionsText: 'Title', optionsValue: 'Id', optionsCaption: 'Select Team', value: selectedTeam"></select>
+                <select data-bind="options: officeList, optionsText: 'Title', optionsValue: 'Id', optionsCaption: 'Select Office', value: selectedOffice"></select>
+            </div>
+
+            <div data-bind="pageGrid: ConsoleApp.vmManageWarrantyWordings.teamOfficeWarrantyWordingsList,
+    columns: [{ headerText: 'Title', rowText: 'Title' }],
+    caption: 'Additional WarrantyWordings for Team',
+    pageGridTemplate: 'tableAdditionalWarrantyWordingsForTeam'">
+            </div>
+        </div>
+
+        <!-- end span -->
+
+        <!-- span -->
+        <div class="span2">
+            <fieldset style="align-content: center">
+                <center><span class="label label-info">Add / Remove WarrantyWordings to Teams</span></center>
+                <p></p>
+                <br />
+                <center>
+                    <p>
+                        <a href="#" title="Remove WarrantyWording From Team" data-bind="click: click_RemoveWarrantyWordingFromTeam " class="btn btn-primary"><i class="icon-chevron-left icon-white"></i></a>
+                        <a href="#" title="Add WarrantyWording To Team" data-bind="click: click_AddWarrantyWordingToTeamOffice" class="btn btn-primary"><i class="icon-chevron-right icon-white"></i></a>
+                    </p>
+
+                </center>
+            </fieldset>
+        </div>
+
+        <!-- end span -->
+
+        <!-- span -->
+
+        <div class="span5">
+            <div class="row-fluid"> <br /><br /></div>
+            <div data-bind="pageGrid: ConsoleApp.vmManageWarrantyWordings.warrantyWordingsForTeamOfficeSelectList,
+    columns: [{ headerText: 'Title', rowText: 'name' }],
+    caption: 'Selected WarrantyWordings for Team Office',
+    pageGridTemplate: 'tableSelectedWarrantyWordingsForTeamOffice'">
+            </div>
+            <div class="container">
+            <a href="#" title="Move up" data-bind="click: click_selectedWarrantyWordingForTeamOfficeSelectListMoveUp" class="btn btn-primary">Move up</a>
+            <a href="#" title="Move down" data-bind="click: click_selectedWarrantyWordingForTeamOfficeSelectListMoveDown" class="btn btn-primary">Move down</a>
+        </div>
+            <p><a href="#" title="Edit" data-bind="click: click_SaveTeamOfficeWarrantyWordings" class="btn btn-primary"><i class="icon-pencil icon-white"></i>Save Team WarrantyWordings</a></p>
+        </div>
+
+        <!-- end span -->
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- Add / Edit Links -->
+
+<div id="CreateEditWarrantyWording_ModalAlert" class="val-alert modal hide fade">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <i class="icon-remove"></i>
+        </button>
+        <span data-bind="text: createEditTitle"></span>
+    </div>
+    <div class="modal-body">
+
+        <!-- Create Team Body -->
+
+        <form id="formCreateEditWarrantyWording">
+
+            <table data-bind="with: selectedAllWarrantyWording">
+
+                <tr>
+                    <td>Title </td>
+                    <td>
+                        <p>
+                            <input type="text" data-bind="value: Title" required>
+                            @Html.ValidationMessageFor(model => model.Title, null, new { @class = "help-inline" })
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+        <!-- Create Team Body -->
+
+
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-small" data-dismiss="modal" data-bind="click: click_CancelCreateEdit">Cancel</a>
+        <a href="#" class="btn btn-small btn-primary" data-bind="click: click_CreateWarrantyWording, visible: createButtonVisible">Save WarrantyWording</a>
+        <a href="#" class="btn btn-small btn-primary" data-bind="click: click_EditWarrantyWording, visible: editButtonVisible">Save WarrantyWording</a>
+    </div>
+</div>
+
+<!-- grid templates -->
+<script type="text/html" id="003"></script>
+<script type="text/html" id="tableAllWarrantyWordingList">
+    <table class="table table-condensed table-striped table-bordered table-hover">
+        <caption><span data-bind="text: caption"></span></caption>
+        <thead>
+            <tr>
+                <!-- ko foreach:  columns -->
+                <th data-bind="text: headerText"></th>
+                <!-- /ko -->
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: itemsOnCurrentPage">
+            <tr data-bind="event: { click: ConsoleApp.vmManageWarrantyWordings.onClickAllWarrantyWordingsItem }">
+                <!-- ko foreach:  $parent.columns -->
+                <td data-bind="text: typeof rowText == 'function' ? rowText($parent) : $parent[rowText]"></td>
+                <!-- /ko -->
+                <td>
+                    <a href="#" title="Edit" data-bind="click: ConsoleApp.vmManageWarrantyWordings.click_OpenCreateEditWarrantyWordingModal_Edit, css: { 'disabled': ConsoleApp.vmManageWarrantyWordings.editWarrantyWordingButton_Status() }" class="btn btn-primary"><i class="icon-pencil icon-white"></i></a>
+                    <a href="#" title="Delete" data-bind="click: ConsoleApp.vmManageWarrantyWordings.click_DeleteWarrantyWording" class="btn btn-primary"><i class="icon-trash icon-white"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</script>
+
+<script type="text/html" id="tableAdditionalWarrantyWordingsForTeam">
+    <table class="table table-condensed table-striped table-bordered table-hover">
+        <caption><span data-bind="text: caption"></span></caption>
+        <thead>
+            <tr>
+                <!-- ko foreach:  columns -->
+                <th data-bind="text: headerText"></th>
+                <!-- /ko -->
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: itemsOnCurrentPage">
+            <tr data-bind="event: { click: ConsoleApp.vmManageWarrantyWordings.onClickTeamOfficeWarrantyWordingItem }, css: { 'ui-selected': ConsoleApp.vmManageWarrantyWordings.selectedTeamWarrantyWording().Id() == $data.Id() }">
+                <!-- ko foreach:  $parent.columns -->
+                <td data-bind="text: typeof rowText == 'function' ? rowText($parent) : $parent[rowText]"></td>
+                <!-- /ko -->
+            </tr>
+        </tbody>
+    </table>
+</script>
+
+<script type="text/html" id="tableSelectedWarrantyWordingsForTeamOffice">
+    <table class="table table-condensed table table-bordered table-hover">
+        <caption><span data-bind="text: caption"></span></caption>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Strike Through</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: itemsOnCurrentPage">
+            <tr data-bind="event: { click: ConsoleApp.vmManageWarrantyWordings.onClickSelectedTeamOfficeWarrantyWordingItem }, css: { 'ui-selected': ConsoleApp.vmManageWarrantyWordings.selectedWarrantyWordingForTeamOfficeSelectList() == $data.key }" >
+                <td data-bind="text: $data.name"></td>
+                 <td><input type="checkbox" data-bind="checked: IsStrikeThrough, event: { click: ConsoleApp.vmManageWarrantyWordings.onClickSelectedTeamOfficeWarrantyWordingItemToggleIsStrikeThrough }" /></td>
+            </tr>
+        </tbody>
+    </table>
+</script>
+
+
+

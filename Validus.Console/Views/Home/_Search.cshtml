@@ -1,0 +1,55 @@
+﻿<form id="searchArea" style="padding-bottom:10px;">
+                                <div class="row-fluid" id="mainSearchFilter">
+                                    <div class="span9">
+                                        <div class="val-search input-append">
+                                            <input type="text" class="val-searchterm val-clear-input input-xlarge" placeholder="Search" data-bind="value: Keywords, valueUpdate: 'keyup'" />
+                                            <button class="val-searchbutton btn" type="button">
+                                                <span class="val-searchlabel">Advanced </span><i class="icon-search"></i>
+                                            </button>
+                                            <button id="advancedFiltersToggle" class="btn" type="button" data-bind="html: ButtonHtml()">
+                                                <span>Extra Filters </span><i class="icon-chevron-down"></i>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                    <div class="offset1 span2" >
+                                        <div class="val-search" style=" margin: 10px 0px 0px 10px;" >
+                                            <button class="btn val-minimize-all val-minimize" style="float: right; margin-right: 10px" type="button" data-bind="click: click_minMaxAllSections, css: maximizeCss"><i class="icon-resize-small"></i></button>
+                                            <button class="btn val-maximize-all val-maximize hide" style="float: right; margin-right: 10px" type="button" data-bind="click: click_minMaxAllSections, css: minimizeCss"><i class="icon-resize-full"></i></button>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- TODO: partial for use elsewhere? -->
+                                <div class="row-fluid collapse" id="advancedFilters">
+                                    <div class="span12">
+                                        <div class="advFiltersContainer">
+                                            <p>
+                                                <button class="btn btn-small" data-bind="click: addFilter">Add</button>
+                                                <button class="btn btn-small" data-bind="click: ClearFilters">Clear</button>
+                                            </p>
+                                            <table id="advancedFiltersTable" data-bind="foreach: filters">
+                                                <tr>
+                                                    <td>
+                                                        <select class="control-label input-medium" data-bind="options:$parent.PropertyOptions, optionsValue:'val', optionsText:'name', value: Prop"></select>
+                                                    </td>
+                                                    <td>
+                                                        <select class="control-label input-medium" 
+                                                                data-bind="options: Fns, optionsText: 'label', optionsValue: 'val', value: Fn, enable: Fns().length > 1">
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="input-medium" data-bind="value: Val" />
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-mini" data-bind="click: $parent.removeFilter">Remove</button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <p>
+                                                <button class="btn btn-small btn-primary val-searchbutton">Search</button>
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>

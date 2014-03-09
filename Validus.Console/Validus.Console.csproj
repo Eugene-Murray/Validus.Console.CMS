@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D15C1070-0AE4-42BD-9E1A-0C70A5E90497}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Validus.Console</RootNamespace>
+    <AssemblyName>Validus.Console</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataAnnotationsExtensions">
+      <HintPath>..\packages\DataAnnotationsExtensions.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="EFProviderWrapperToolkit">
+      <HintPath>..\packages\CommunityEFProviderWrappers.EFProviderWrapperToolkit.1.0.0\lib\net40-Client\EFProviderWrapperToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EFTracingProvider">
+      <HintPath>..\packages\CommunityEFProviderWrappers.EFTracingProvider.1.0.0\lib\net40-Client\EFTracingProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServerAppFabric.Client.1.1.2106\lib\Microsoft.ApplicationServer.Caching.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServerAppFabric.Client.1.1.2106\lib\Microsoft.ApplicationServer.Caching.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.ExceptionHandling.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging">
+      <HintPath>..\packages\EnterpriseLibrary.ExceptionHandling.Logging.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Validation.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search">
+      <HintPath>..\Library\Microsoft.SharePoint.Client.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.3.0\lib\net40\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="SourceCode.Workflow.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\SourceCode.Workflow.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc3">
+      <HintPath>..\packages\Unity.Mvc3.1.2\lib\net40\Unity.Mvc3.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.WebApi">
+      <HintPath>..\packages\Unity.WebAPI.0.10\lib\net40\Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Validus.Services.Models">
+      <HintPath>..\Library\Validus.Services.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DatabaseInit.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\HttpContextLifetimeManager.cs" />
+    <Compile Include="App_Start\IoCConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BusinessLogic\AdminModuleManager.cs" />
+    <Compile Include="BusinessLogic\ITemplatesModule.cs" />
+    <Compile Include="BusinessLogic\IWebSiteModuleManager.cs" />
+    <Compile Include="BusinessLogic\TemplatesModule.cs" />
+    <Compile Include="BusinessLogic\WebSiteModuleManager.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Controllers\DataVizController.cs" />
+    <Compile Include="Controllers\TemplatesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Data\ConsoleRepository.cs" />
+    <Compile Include="Data\DbInitializer\SeedHelper.cs" />
+    <Compile Include="Data\IConsoleRepository.cs" />
+    <Compile Include="DTO\AllPageTemplatesDto.cs" />
+    <Compile Include="DTO\BasicUserDto.cs" />
+    <Compile Include="BusinessLogic\IAdminModuleManager.cs" />
+    <Compile Include="DTO\PageTemplatesDto.cs" />
+    <Compile Include="DTO\RequiredDataCreateTeamDto.cs" />
+    <Compile Include="DTO\RequiredDataUserDto.cs" />
+    <Compile Include="DTO\SiteTemplatedPageDto.cs" />
+    <Compile Include="DTO\PageTemplateDto.cs" />
+    <Compile Include="DTO\TemplateDto.cs" />
+    <Compile Include="DTO\UserTeamQuoteTemplateDto.cs" />
+    <Compile Include="DTO\LinkDto.cs" />
+    <Compile Include="DTO\TeamDto.cs" />
+    <Compile Include="DTO\TeamLinksDto.cs" />
+    <Compile Include="DTO\TeamMembershipDto.cs" />
+    <Compile Include="DTO\UserDto.cs" />
+    <Compile Include="DTO\UserTeamLinkDto.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403071706112_R1_IntialCreate.cs" />
+    <Compile Include="Migrations\201403071706112_R1_IntialCreate.Designer.cs">
+      <DependentUpon>201403071706112_R1_IntialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap-responsive.css" />
+    <Content Include="Content\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.custom.css" />
+    <Content Include="Content\css\bootstrap-datepicker.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.themed.css" />
+    <Content Include="Content\css\jquery-ui-1.10.0.custom.css" />
+    <Content Include="Content\css\jquery-ui-1.9.2.custom.css" />
+    <Content Include="Content\css\jquery.ui.1.10.0.ie.css" />
+    <Content Include="Content\css\jquery.ui.1.9.2.ie.css" />
+    <Content Include="Content\css\kendo.dataviz.blueopal.css" />
+    <Content Include="Content\css\select2-bootstrap.css" />
+    <Content Include="Content\css\select2.css" />
+    <Content Include="Content\css\toastr.custom.css" />
+    <Content Include="Content\images\IE10ClearInput.png" />
+    <Content Include="Content\images\email-icon.png" />
+    <Content Include="Content\images\email-open-icon.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\css\jquery.bootstrap.datatables.css" />
+    <Content Include="Content\css\jquery.datatables.css" />
+    <Content Include="Content\images\back_disabled.png" />
+    <Content Include="Content\images\back_enabled.png" />
+    <Content Include="Content\images\back_enabled_hover.png" />
+    <Content Include="Content\images\forward_disabled.png" />
+    <Content Include="Content\images\forward_enabled.png" />
+    <Content Include="Content\images\forward_enabled_hover.png" />
+    <Content Include="Content\images\K2Icon.gif" />
+    <Content Include="Content\images\loading-100x100.gif" />
+    <Content Include="Content\images\loading-14x14.gif" />
+    <Content Include="Content\images\select2-spinner.gif" />
+    <Content Include="Content\images\select2.png" />
+    <Content Include="Content\images\select2x2.png" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_asc_disabled.png" />
+    <Content Include="Content\images\sort_both.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\images\sort_desc_disabled.png" />
+    <Content Include="Content\css\qunit.css" />
+    <Content Include="Content\css\toastr.css" />
+    <Content Include="Content\css\toastr.min.css" />
+    <Content Include="Content\images\subscribe.png" />
+    <Content Include="Content\images\TaskAllocated.gif" />
+    <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\images\ui-icons_f6cf3b_256x240.png" />
+    <Content Include="Content\images\validus_logo_small.png" />
+    <Content Include="Content\images\validus_logo_smaller.png" />
+    <Content Include="Content\images\ViewItem.gif" />
+    <Content Include="Content\xml\SearchQuery.xml" />
+    <Content Include="Content\xml\SearchTransform.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\images\Sorting icons.psd" />
+    <Content Include="Content\images\animated_progress.gif" />
+    <Content Include="Migrations\R1_InitialCreate.sql" />
+    <Content Include="Parameters.xml" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Scripts\lib\amplify-vsdoc.js" />
+    <Content Include="Scripts\app\Dtos\TeamWarrantyWordingsDto.js" />
+    <Content Include="Scripts\app\knockout-wysihtml5.js" />
+    <Content Include="Scripts\app\vmManageWarrantyWordings.js" />
+    <Content Include="Scripts\app\Dtos\WarrantyWordingSettingDto.js" />
+    <Content Include="Scripts\app\Models\WarrantyWording.js" />
+    <Content Include="Scripts\app\Repositories\adminConfig.js" />
+    <Content Include="Scripts\app\Repositories\adminTeamRepository.js" />
+    <Content Include="Scripts\app\Dtos\PageTemplateDto.js" />
+    <Content Include="Scripts\app\Dtos\PageTemplatesDto.js" />
+    <Content Include="Scripts\app\vmSiteConfigurationBase.js" />
+    <Content Include="Scripts\app\vmDataViz.js" />
+    <Content Include="Scripts\lib\advanced.js" />
+    <Content Include="Scripts\lib\wysihtml5-0.3.0.js" />
+    <Content Include="Scripts\templateAfterRenderDomFunctions.js" />
+    <Content Include="Scripts\app\Models\Filter.js" />
+    <Content Include="Scripts\app\vmHome.js" />
+    <Content Include="Scripts\InitAdmin.js" />
+    <Content Include="Scripts\app\knockout-select2.js" />
+    <Content Include="Scripts\app\Models\SiteConfigTeam.js" />
+    <Content Include="Scripts\app\Dtos\HomePageSectionDto.js" />
+    <Content Include="Scripts\app\Models\TemplateData.js" />
+    <Content Include="Scripts\app\vmSiteConfiguration.js" />
+    <Content Include="Scripts\lib\infuser.js" />
+    <Content Include="Scripts\lib\koExternalTemplateEngine.js" />
+    <Content Include="Scripts\lib\koExternalTemplateEngine.min.js" />
+    <Content Include="Scripts\lib\amplify.js" />
+    <Content Include="Scripts\lib\amplify.min.js" />
+    <Content Include="Scripts\app\knockout-autonumeric.js" />
+    <Content Include="Scripts\app\knockout-bootstrap-typeahead.js" />
+    <Content Include="Scripts\lib\knockout-3.0.0.debug.js" />
+    <Content Include="Scripts\lib\knockout-3.0.0.js" />
+    <Content Include="Scripts\lib\knockout-activity.js" />
+    <Content Include="Scripts\lib\knockout-command.js" />
+    <Content Include="Scripts\lib\knockout-dirtyflag.js" />
+    <Content Include="Scripts\lib\select2.js" />
+    <Content Include="Scripts\lib\select2.min.js" />
+    <Content Include="Scripts\app\vmManageUnderwriterSignature.js" />
+    <Content Include="Scripts\app\knockout-datepicker.js" />
+    <Content Include="Scripts\app\knockout-validation.js" />
+    <Content Include="Scripts\app\knockout-bootstrap.js" />
+    <Content Include="Scripts\app\knockout-datatables.js" />
+    <Content Include="Scripts\app\Models\AuditTrail.js" />
+    <Content Include="Scripts\app\Dtos\MarketWordingSettingDto.js" />
+    <Content Include="Scripts\app\Dtos\SubjectToClauseWordingSettingDto.js" />
+    <Content Include="Scripts\app\Dtos\TeamTermsNConditionWordingsDto.js" />
+    <Content Include="Scripts\app\Dtos\TeamSubjectToClauseWordingsDto.js" />
+    <Content Include="Scripts\app\Dtos\TermsNConditionWordingSettingDto.js" />
+    <Content Include="Scripts\app\ko.pageGrid.js" />
+    <Content Include="Scripts\app\Models\SubjectToClauseWording.js" />
+    <Content Include="Scripts\app\Models\TermsNConditionWording.js" />
+    <Content Include="Scripts\app\vmManageSubjectToClauseWordings.js" />
+    <Content Include="Scripts\app\Dtos\BasicUserDto.js" />
+    <Content Include="Scripts\app\Dtos\COBDto.js" />
+    <Content Include="Scripts\app\Dtos\DefaultUnderwriterDto.js" />
+    <Content Include="Scripts\app\Dtos\LinkDto.js" />
+    <Content Include="Scripts\app\Dtos\OfficeDto.js" />
+    <Content Include="Scripts\app\Dtos\TeamAppAcceleratorsDto.js" />
+    <Content Include="Scripts\app\Dtos\TeamDto.js" />
+    <Content Include="Scripts\app\Dtos\TeamLinksDto.js" />
+    <Content Include="Scripts\app\Dtos\TeamMembershipDto.js" />
+    <Content Include="Scripts\app\Dtos\TeamMembershipTeamDto.js" />
+    <Content Include="Scripts\app\Dtos\TeamQuoteTemplatesDto.js" />
+    <Content Include="Scripts\app\Dtos\UserDto.js" />
+    <Content Include="Scripts\app\ko.InitialiseDatePickers.js" />
+    <Content Include="Scripts\app\ko.InitialisePane.js" />
+    <Content Include="Scripts\app\ko.InitialiseTabs.js" />
+    <Content Include="Scripts\app\Models\AdminView.js" />
+    <Content Include="Scripts\app\Models\MarketWording.js" />
+    <Content Include="Scripts\app\Dtos\TeamMarketWordingsDto.js" />
+    <Content Include="Scripts\app\vmManageTermsNConditionWordings.js" />
+    <Content Include="Scripts\app\vmManageMarketWordings.js" />
+    <Content Include="Scripts\app\Models\Accelerator.js" />
+    <Content Include="Scripts\app\Models\QuoteTemplate.js" />
+    <Content Include="Scripts\app\vmManageAccelerators.js" />
+    <Content Include="Scripts\app\vmManageQuoteTemplates.js" />
+    <Content Include="Scripts\app\ko.bootstrap-carousel.js" />
+    <Content Include="Scripts\app\ko.bootstrap-tabs.js" />
+    <Content Include="Scripts\app\ko.cancelBubbleClickEvent.js" />
+    <Content Include="Scripts\app\ko.dirtyFlag.js" />
+    <None Include="Properties\PublishProfiles\QuickDeploy.pubxml" />
+    <Content Include="Scripts\app\ko.dumpObservable.js" />
+    <Content Include="Scripts\InitHome.js" />
+    <Content Include="Scripts\lib\auto-numeric.js" />
+    <Content Include="Scripts\lib\bootstrap-datepicker.js" />
+    <Content Include="Scripts\lib\jquery.pubsub.js" />
+    <Content Include="Scripts\app\ko.defaultValueDropDown.js" />
+    <Content Include="Content\images\validus_logo.png" />
+    <Content Include="Scripts\app\vmAdminIndex.js" />
+    <Content Include="Scripts\app\vmManageLinks.js" />
+    <Content Include="Scripts\app\helpers.js" />
+    <Content Include="Scripts\app\ko.jquery-datatables.js" />
+    <Content Include="Scripts\app\vmManageTeams.js" />
+    <Content Include="Scripts\app\vmManageUsers.js" />
+    <Content Include="Scripts\lib\bootstrap-typeahead.js" />
+    <Content Include="Scripts\lib\kendo.dataviz.js" />
+    <Content Include="Scripts\lib\moment.js" />
+    <Content Include="Scripts\lib\moment.min.js" />
+    <Content Include="Scripts\lib\toastr.custom.min.js" />
+    <Content Include="Scripts\lib\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap.min.js" />
+    <Content Include="Scripts\lib\jquery-1.9.0.js" />
+    <Content Include="Scripts\lib\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\lib\jquery-ui-1.10.0.js" />
+    <Content Include="Scripts\lib\jquery-ui-1.10.0.min.js" />
+    <Content Include="Scripts\lib\jquery.bootstrap.datatables.js" />
+    <Content Include="Scripts\lib\jquery.datatables.js" />
+    <Content Include="Scripts\lib\jquery.datatables.min.js" />
+    <Content Include="Scripts\lib\knockout.mapping-2.4.1.js" />
+    <Content Include="Scripts\lib\toastr.custom.js" />
+    <Content Include="Scripts\lib\toastr.js" />
+    <Content Include="Scripts\lib\toastr.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\lib\qunit.js" />
+    <Content Include="Scripts\debug.js" />
+    <Content Include="Scripts\Tests\HomePageFixture.html" />
+    <Content Include="Scripts\Tests\HomePageFixture.js" />
+    <Content Include="Scripts\Tests\MemoryManagmentFixture.html" />
+    <Content Include="Scripts\Tests\MemoryManagmentFixture.js" />
+    <Content Include="Scripts\Tests\SubmissionFixture.Quote.js" />
+    <Content Include="Scripts\Tests\SubmissionFixture.OptionVersion.js" />
+    <Content Include="Scripts\Tests\SubmissionFixture.Submission.js" />
+    <Content Include="Scripts\Tests\SubmissionFixture.html" />
+    <Content Include="Scripts\Tests\SubmissionFixture.Option.js" />
+    <Content Include="Scripts\Tests\TestHelpers.js" />
+    <Content Include="Scripts\lib\underscore.js" />
+    <Content Include="Scripts\lib\TrafficCop.js" />
+    <Content Include="Scripts\app\vmTemplateBase.js" />
+    <Content Include="Scripts\Tests\TestMemoryObject.js" />
+    <Content Include="Scripts\lib\kendo.dataviz.min.js.map">
+      <DependentUpon>kendo.dataviz.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lib\koExternalTemplateEngine.min.js.map">
+      <DependentUpon>koExternalTemplateEngine.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lib\jquery.datatables.min.js.map">
+      <DependentUpon>jquery.datatables.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Tests\AdminFixture.html" />
+    <Content Include="Scripts\Tests\AdminFixture.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\css\main.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Admin\_ManageTeams.cshtml" />
+    <Content Include="Views\Admin\_ManageUsers.cshtml" />
+    <Content Include="Views\Admin\_ManageLinks.cshtml" />
+    <Content Include="Views\Admin\PersonalSettings.cshtml" />
+    <Content Include="Views\Admin\_ManageQuoteTemplates.cshtml" />
+    <Content Include="Views\Admin\_ManageAccelerators.cshtml" />
+    <Content Include="Views\Admin\AcceleratorIndex.cshtml" />
+    <Content Include="Views\Admin\_ManageMarketWordings.cshtml" />
+    <Content Include="Views\Admin\_ManageSubjectToClauseWordings.cshtml" />
+    <Content Include="Views\Admin\_ManageTermsNConditionWordings.cshtml" />
+    <Content Include="Views\Admin\_ManageUnderwriterSignature.cshtml" />
+    <Content Include="Views\Admin\_SiteConfiguration.cshtml" />
+    <Content Include="Views\Home\_Search.cshtml" />
+    <Content Include="Views\Home\_SearchResults.cshtml" />
+    <Content Include="Views\Home\_Preview.cshtml" />
+    <Content Include="Views\Home\_DefaultHomeTemplate.cshtml" />
+    <Content Include="Views\Templates\_8SectionTemplate.cshtml" />
+    <Content Include="Views\Templates\_4SectionTemplate.cshtml" />
+    <Content Include="Views\Templates\_BaseTemplate.cshtml" />
+    <Content Include="Views\Templates\_2SectionTemplate.cshtml" />
+    <Content Include="Views\DataViz\_PieChart.cshtml" />
+    <Content Include="Views\Templates\_1SectionTemplate.cshtml" />
+    <Content Include="Views\Admin\_ManageWarrantyWordings.cshtml" />
+    <Content Include="Views\Templates\_5SectionTemplate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Validus.Core\Validus.Core.csproj">
+      <Project>{2e49c350-33b5-46da-8dd3-e526b2511caa}</Project>
+      <Name>Validus.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Validus.Models\Validus.Models.csproj">
+      <Project>{b68b0755-d2e1-41aa-bee9-87c642d7ea11}</Project>
+      <Name>Validus.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201403071706112_R1_IntialCreate.resx">
+      <DependentUpon>201403071706112_R1_IntialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63190</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53025/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Console Administration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="outerContainer">
+
+    <div class="navbar">
+        <div class="navbar-inner">
+
+            <ul class="nav" data-bind="foreach: views">
+
+                <li data-bind="css: { active: $data.active }"><a href="#" data-bind="text: $data.title, click: $root.selectedView"></a></li>
+
+            </ul>
+        </div>
+    </div>
+    
+    <br />
+
+    <div data-bind="with: selectedView">
+        <div data-bind="template: { name: templateName, data: data }"></div>
+    </div>
+    
+</div>
+<span class="pull-right btn btn-mini totop" style="display: block;">
+    <a href="#"><i class="icon-chevron-up"></i></a>
+</span>
+
+<div id="popover-create-templatedpage" style="display: none">
+    <table>
+        <tr><td>Title: </td><td><input type="text" id="createPageTitle"/></td></tr>
+        <tr><td>ViewModel: </td><td><input type="text" id="createViewModel" /></td></tr>
+        <tr><td>Add To Top Menu?: </td><td><input type="checkbox" id="createPageAddToTopMenu" /> </td></tr>
+        <tr><td>Is Separate Browser Tab?: </td><td><input type="checkbox" id="createPageIsSeparateBrowserTab" /> </td></tr>
+        <tr>
+            <td colspan="2">
+                <a href="#" title="Save New Templated Page" class="btn btn-primary pull-right" id="click_SaveNewTemplatedPage"><i class="icon-pencil icon-white"></i> Save New Templated Page</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="popover-create-template" style="display: none">
+    <table >
+        <tr><td>Title: </td><td><input type="text" id="createTemplateTitle" /></td></tr>
+        <tr><td>Url: </td><td><input type="text" id="createTemplateUrl" /></td></tr>
+        <tr><td>Add To Top Menu?: </td><td><input type="checkbox" id="createTemplateIsPageStructureTemplate" /> </td></tr>
+        <tr><td>AfterRenderDomFunction: </td><td><input type="text" id="createTemplateAfterRenderDomFunction" /></td></tr>
+        <tr>
+            <td colspan="2">
+                <a href="#" title="Create New Template" class="btn btn-primary pull-right"><i class="icon-pencil icon-white" id="click_SaveNewTemplate"></i> Save New Template</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section scripts {
+    
+    <script type="text/javascript" src="@Url.Content("/Scripts/InitAdmin.js")" ></script>
+}

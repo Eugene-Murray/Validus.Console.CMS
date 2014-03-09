@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+    <!-- JQuery -->
+    <script src="../lib/jquery-1.9.0.js" type="text/javascript"></script>
+    <script src="../lib/jquery.pubsub.js" type="text/javascript"></script>
+    <script src="../lib/bootstrap.js" type="text/javascript"></script>
+    <script src="../lib/knockout-3.0.0.js" type="text/javascript"></script>
+    <script src="../lib/toastr.js" type="text/javascript"></script>
+    <script src="../lib/moment.js" type="text/javascript"></script>
+    <script src="../lib/jquery.datatables.js" type="text/javascript"></script>
+    <script src="TestHelpers.js" type="text/javascript"></script>
+    <script src="../lib/kendo.dataviz.js" type="text/javascript"></script>
+
+    <script src="../lib/advanced.js" type="text/javascript"></script>
+    <script src="../lib/amplify.js" type="text/javascript"></script>
+    <script src="../lib/auto-numeric.js" type="text/javascript"></script>
+    <script src="../lib/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="../lib/bootstrap-typeahead.js" type="text/javascript"></script>
+    <script src="../lib/bootstrap.js" type="text/javascript"></script>
+    <script src="../lib/infuser.js" type="text/javascript"></script>
+    <script src="../lib/jquery-ui-1.10.0.js" type="text/javascript"></script>
+    <script src="../lib/jquery.bootstrap.datatables.js" type="text/javascript"></script>
+    <script src="../lib/jquery.datatables.js"></script>
+    <script src="../lib/knockout-activity.js"></script>
+    <script src="../lib/knockout-command.js"></script>
+    <script src="../lib/knockout-dirtyflag.js" type="text/javascript"></script>
+    <script src="../lib/knockout.mapping-2.4.1.js" type="text/javascript"></script>
+    <script src="../lib/koExternalTemplateEngine.js" type="text/javascript"></script>
+    <script src="../lib/koExternalTemplateEngine.min.js" type="text/javascript"></script>
+    <script src="../lib/select2.js" type="text/javascript"></script>
+    <script src="../lib/toastr.custom.js" type="text/javascript"></script>
+    <script src="../lib/toastr.custom.min.js" type="text/javascript"></script>
+    <script src="../lib/toastr.js" type="text/javascript"></script>
+    <script src="../lib/TrafficCop.js" type="text/javascript"></script>
+    <script src="../lib/underscore.js" type="text/javascript"></script>
+    <script src="../lib/wysihtml5-0.3.0.js" type="text/javascript"></script>
+   
+    <script src="../app/helpers.js" type="text/javascript"></script>
+    <script src="../main.js" type="text/javascript"></script>
+    <script src="TestMemoryObject.js"></script>
+
+    <script src="../app/vmSubmission.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionAH.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionCA.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionCM.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionCN.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionCO.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionEN.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionFI.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionHM.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionME.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionPV.js" type="text/javascript"></script>
+    <script src="../app/vmSubmissionWK.js" type="text/javascript"></script>
+     
+    <script src="../app/knockout-autonumeric.js"></script>
+    <script src="../app/knockout-bootstrap-typeahead.js"></script>
+    <script src="../app/knockout-bootstrap.js"></script>
+    <script src="../app/knockout-datatables.js"></script>
+    <script src="../app/knockout-datepicker.js"></script>
+    <script src="../app/knockout-select2.js"></script>
+    <script src="../app/knockout-validation.js"></script>
+    <script src="../app/knockout-wysihtml5.js"></script>
+    <script src="../app/ko.bootstrap-carousel.js"></script>
+    <script src="../app/ko.bootstrap-tabs.js"></script>
+    <script src="../app/ko.cancelBubbleClickEvent.js"></script>
+    <script src="../app/ko.defaultValueDropDown.js"></script>
+    <script src="../app/ko.dirtyFlag.js"></script>
+    <script src="../app/ko.dumpObservable.js"></script>
+    <script src="../app/ko.InitialiseDatePickers.js"></script>
+    <script src="../app/ko.InitialisePane.js"></script>
+    <script src="../app/ko.InitialiseTabs.js"></script>
+    <script src="../app/ko.jquery-datatables.js"></script>
+    <script src="../app/ko.pageGrid.js"></script>
+    
+
+    <!-- Console -->
+    <script src="../app/vmSiteConfigurationBase.js"></script>
+    <script src="../app/vmSiteConfiguration.js"></script>
+    <script src="../app/vmTemplateBase.js"></script>
+    <script src="../app/vmAdminIndex.js"></script>
+    <script src="../app/vmDataViz.js"></script>
+    <script src="../app/vmHome.js"></script>
+    <script src="../app/vmManageAccelerators.js"></script>
+    <script src="../app/vmManageLinks.js"></script>
+    <script src="../app/vmManageMarketWordings.js"></script>
+    <script src="../app/vmManageQuoteTemplates.js"></script>
+    <script src="../app/vmManageSubjectToClauseWordings.js"></script>
+    <script src="../app/vmManageTeams.js"></script>
+    <script src="../app/vmManageTermsNConditionWordings.js"></script>
+    <script src="../app/vmManageUnderwriterSignature.js"></script>
+    <script src="../app/vmManageUsers.js"></script>
+    <script src="../app/vmManageWarrantyWordings.js"></script>
+    <script src="../app/vmSiteConfiguration.js"></script>
+    <script src="../app/vmSiteConfigurationBase.js"></script>
+    
+    <script src="../app/Dtos/BasicUserDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/COBDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/DefaultUnderwriterDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/HomePageSectionDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/LinkDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/MarketWordingSettingDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/OfficeDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/PageTemplateDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/SubjectToClauseWordingSettingDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/PageTemplatesDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamAppAcceleratorsDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamLinksDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamMarketWordingsDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamMembershipDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamMembershipTeamDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamQuoteTemplatesDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamSubjectToClauseWordingsDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamTermsNConditionWordingsDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TeamWarrantyWordingsDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/TermsNConditionWordingSettingDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/UserDto.js" type="text/javascript"></script>
+    <script src="../app/Dtos/WarrantyWordingSettingDto.js" type="text/javascript"></script>
+    <script src="../app/Models/Accelerator.js" type="text/javascript"></script>
+    <script src="../app/Models/AdminView.js" type="text/javascript"></script>
+    <script src="../app/Models/AuditTrail.js" type="text/javascript"></script>
+    <script src="../app/Models/Filter.js" type="text/javascript"></script>
+    <script src="../app/Models/MarketWording.js" type="text/javascript"></script>
+    <script src="../app/Models/QuoteTemplate.js" type="text/javascript"></script>
+    <script src="../app/Models/SiteConfigTeam.js" type="text/javascript"></script>
+    <script src="../app/Models/SubjectToClauseWording.js" type="text/javascript"></script>
+    <script src="../app/Models/TemplateData.js" type="text/javascript"></script>
+    <script src="../app/Models/TermsNConditionWording.js" type="text/javascript"></script>
+    <script src="../app/Models/WarrantyWording.js" type="text/javascript"></script>
+
+
+    <!-- QUnit -->
+    <script src="../lib/qunit.js" type="text/javascript"></script>
+    <link href="../../Content/css/qunit.css" rel="stylesheet" />
+   
+
+</head>
+<body>
+    
+    <h1 id="qunit-header">Memory Management Fixture</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+
+    
+    
+    <script src="MemoryManagmentFixture.js"></script>
+
+    <div id="formTestFixture1"></div>
+    <div id="formTestFixture2"></div>
+    <div id="formTestFixture3"></div>
+    <div id="formTestFixture4"></div>
+    <div id="formTestFixture5"></div>
+    <div id="formTestFixture6"></div>
+    <div id="formTestFixture7"></div>
+    <div id="formTestFixture8"></div>
+    <div id="formTestFixture9"></div>
+    <div id="formTestFixture10"></div>
+    
+    <div id="formTestFixture11"></div>
+    <div id="formTestFixture12"></div>
+    <div id="formTestFixture13"></div>
+    <div id="formTestFixture14"></div>
+    <div id="formTestFixture15"></div>
+    <div id="formTestFixture16"></div>
+    <div id="formTestFixture17"></div>
+    <div id="formTestFixture18"></div>
+    <div id="formTestFixture19"></div>
+    <div id="formTestFixture20"></div>
+    
+    <div id="formTestFixture21"></div>
+    <div id="formTestFixture22"></div>
+    <div id="formTestFixture23"></div>
+    <div id="formTestFixture24"></div>
+    <div id="formTestFixture25"></div>
+    <div id="formTestFixture26"></div>
+    <div id="formTestFixture27"></div>
+    <div id="formTestFixture28"></div>
+    <div id="formTestFixture29"></div>
+    <div id="formTestFixture30"></div>
+    
+    <div id="formTestFixture31"></div>
+    <div id="formTestFixture32"></div>
+    <div id="formTestFixture33"></div>
+    <div id="formTestFixture34"></div>
+    <div id="formTestFixture35"></div>
+    <div id="formTestFixture36"></div>
+    <div id="formTestFixture37"></div>
+    <div id="formTestFixture38"></div>
+    <div id="formTestFixture39"></div>
+    <div id="formTestFixture40"></div>
+    
+    <div id="formTestFixture41"></div>
+    <div id="formTestFixture42"></div>
+    <div id="formTestFixture43"></div>
+    <div id="formTestFixture44"></div>
+    <div id="formTestFixture45"></div>
+    <div id="formTestFixture46"></div>
+    <div id="formTestFixture47"></div>
+    <div id="formTestFixture48"></div>
+    <div id="formTestFixture49"></div>
+    <div id="formTestFixture50"></div>
+    
+    <div id="formTestFixture51"></div>
+    <div id="formTestFixture52"></div>
+    <div id="formTestFixture53"></div>
+    <div id="formTestFixture54"></div>
+    <div id="formTestFixture55"></div>
+    <div id="formTestFixture56"></div>
+    <div id="formTestFixture57"></div>
+    <div id="formTestFixture58"></div>
+    <div id="formTestFixture59"></div>
+    <div id="formTestFixture60"></div>
+    
+    <div id="formTestFixture61"></div>
+    <div id="formTestFixture62"></div>
+    <div id="formTestFixture63"></div>
+    <div id="formTestFixture64"></div>
+    <div id="formTestFixture65"></div>
+    <div id="formTestFixture66"></div>
+    <div id="formTestFixture67"></div>
+    <div id="formTestFixture68"></div>
+    <div id="formTestFixture69"></div>
+    <div id="formTestFixture70"></div>
+
+</body>
+</html>
+

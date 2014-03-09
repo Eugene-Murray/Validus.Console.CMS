@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="tabbable tabs-left">
+    <ul class="val-home-tabs nav nav-tabs">
+        <li class="active">
+            <a href="#tab1-home" data-toggle="tab">@ViewBag.Title</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="tab1-home" class="tab-pane active home-tab-margin">
+            <!-- ko template: {name: pageTemplate } -->
+            <!-- /ko -->
+        </div>
+        
+    </div>
+    
+    <div class="add-space-footer"></div>
+
+    <!-- /.tab-content -->
+</div>
+<span class="pull-right btn btn-mini totop" style="display: block;">
+    <a href="#"><i class="icon-chevron-up"></i></a>
+</span>
+<!-- /.tabbable -->
+
+
+
+<script type="text/html" id="holding-template">
+    <div class="well well-large">
+        <i class="icon-wrench"></i> Holding Template
+    </div>
+</script>
+
+
+
+@section Actions
+{
+<div class="val-actionmenu btn-group">
+	<button class="btn btn-small btn-primary dropdown-toggle" data-toggle="dropdown">
+		Action <span class="caret"></span>
+	</button>
+
+</div>    
+}
+
+@*@section Min
+{
+    <button class="btn btn-small val-minimize-all val-minimize" type="button"><i class="icon-resize-small"></i></button>
+    <button class="btn btn-small val-maximize-all val-maximize hide" type="button"><i class="icon-resize-full"></i></button>    
+}*@
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/home")
+}
+
+<div class="val-worldcheck-detail-panel val-alert val-worldcheck-detail-modal modal hide"></div>

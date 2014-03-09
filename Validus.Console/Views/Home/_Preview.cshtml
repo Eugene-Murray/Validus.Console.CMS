@@ -1,0 +1,14 @@
+﻿<div class="val-preview-pane-container" >
+							<div class="val-caption">
+								<strong>Preview Pane</strong>
+							    <div class="val-preview-minimize val-minimize" data-bind="css: { hide: PrevMin() === true }, click: function() {PrevMin(true);}"><i class="icon-resize-small icon-white"></i></div>
+                                <div class="val-preview-maximize val-maximize" data-bind="css: { hide: PrevMin() === false }, click: function() {PrevMin(false);}"><i class="icon-resize-full icon-white"></i></div>
+								<div class="val-processing hide">Processing...</div>
+							</div>
+    <div class="val-preview-pane" data-bind="css: { collapse: PrevMin() === true }">
+        <div class="val-padding">
+            <span>No preview loaded</span>
+        </div>
+    </div>
+    
+</div>

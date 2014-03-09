@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name="UnitTest.development" id="4535d2a5-8013-4075-a4cb-fe4c91002947" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>These are default test settings for a local test run.</Description>
+  <Deployment>
+    <DeploymentItem filename="Validus.Console.Tests\TestXml\GetReferenceResponse.xml" />
+    <DeploymentItem filename="Validus.Console.Tests\TestXml\GetReferenceResponse2.xml" />
+    <DeploymentItem filename="Validus.Console.Tests\TestXml\CreateQuoteResponse2.xml" />
+    <DeploymentItem filename="Validus.Console.Tests\TestXml\" />
+    <DeploymentItem filename="Validus.Console.Tests\TestXml\CreateQuoteResponse.xml" />
+    <DeploymentItem filename="Validus.Console.Tests\TestXml\UpdatePolicyResponse.xml" />
+  </Deployment>
+  <Execution>
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+    </AgentRule>
+  </Execution>
+</TestSettings>

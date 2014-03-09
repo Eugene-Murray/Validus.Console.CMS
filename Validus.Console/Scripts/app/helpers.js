@@ -61,32 +61,7 @@ if (!String.prototype.trim)
 
 	TODO: Surround the input box with Twitter Bootstrap <div class="input-append"> if required
 */
-$(function()
-{
-	window.EnableClearInput = function()
-	{
-		if ($("input.val-clear-input").siblings("button.val-clear-input").length === 0)
-			$("input.val-clear-input")
-				.keyup(function(e)
-				{
-					$(this).next()[$(this).val() ? "show" : "hide"]();
-				})
-				.after($('<button type="button" class="btn val-clear-input">')
-					.append('<i class="icon-remove" />')
-					.click(function(e) {
-						ClearSearchField("input[type='text']", this);
-					}).hide());
-	};
 
-	window.EnableClearInput();
-});
-
-function ClearSearchField(txtInput, btnClear) {
-	$(txtInput, $(btnClear).hide().parent()).val("")[0].focus();
-
-	if (ConsoleApp.vmHome && ConsoleApp.vmHome.Keywords)
-		ConsoleApp.vmHome.Keywords("");
-}
 
 /*
 	Global Error Handler
@@ -104,32 +79,11 @@ window.onerror = function(message, url, line)
 
 
 
-/* ------------------------------------------------------------------------------------------------ *\
-	Window Openers
-\* ------------------------------------------------------------------------------------------------ */
 
-function OpenWebPolicy(url)
-{
-	// TODO: return window.open(url, "_blank", "height=460,width=730,location=0,menubar=0,resizable=0,scrollbars=0=status=0,titlebar=0");
-	window.open(url, "_blank", "height=460,width=730,location=0,menubar=0,resizable=0,scrollbars=0=status=0,titlebar=0");
-}
 
-function OpenViewflow(url)
-{
-	return window.open(url, "_blank");
-}
 
-function OpenWorkflowTask(url)
-{
-	var w = 900,
-		h = 750,
-		left = (screen.width / 2) - (w / 2),
-		top = (screen.height / 2) - (h / 2),
-		windowOptions = "toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width="
-			+ w + ",height=" + h + ",top=" + top + ",left=" + left;
 
-	window.open(url, "_blank", windowOptions);
-}
+
 
 
 
@@ -375,49 +329,6 @@ $.extend(
 });
 
 
-/* ------------------------------------------------------------------------------------------------ *\
-	jQuery DataTables Extensions & Helpers
-\* ------------------------------------------------------------------------------------------------ */
-
-/*
-	Base DataTable Configuration
-*/
-function BaseDataTable(displayLength, emptyTableMessage, drawCallback)
-{
-	var self = this;
-
-	self.sDom = "<'row-fluid'<'span12'lftrip>>";
-	self.oLanguage = {
-		sInfo: "_START_ to _END_ of _TOTAL_",
-		sInfoEmpty: "_START_ to _END_ of _TOTAL_",
-		sInfoFiltered: "_START_ to _END_ of _TOTAL_",
-		sEmptyTable: (emptyTableMessage != undefined) ? emptyTableMessage : "No data available in table"
-	};
-	self.iDisplayLength = displayLength || 5;
-	self.bLengthChange = false;
-	self.bPaginate = true;
-	self.bFilter = false;
-	self.bProcessing = true;
-	self.bServerSide = false;
-
-	self.fnDrawCallback = function(oSettings) {
-		console.log('BaseDataTable.fnDrawCallback');
-		if (drawCallback)
-			drawCallback();
-	};
-
-	// TODO: This should not be done via script (use CSS instead)
-	self.fnPreDrawCallback = function(oSettings)
-	{
-		if (self.bProcessing === true)
-		{
-			var oProcessing = $("#" + oSettings.sTableId + "_processing"),
-			    oCaption = $("#" + oSettings.sTableId + " caption");
-
-			$(oProcessing).appendTo(oCaption);
-		}
-	};
-}
 
 
 /* ------------------------------------------------------------------------------------------------ *\

@@ -385,7 +385,6 @@
     <Content Include="Scripts\app\knockout-datepicker.js" />
     <Content Include="Scripts\app\knockout-validation.js" />
     <Content Include="Scripts\app\knockout-bootstrap.js" />
-    <Content Include="Scripts\app\knockout-datatables.js" />
     <Content Include="Scripts\app\Models\AuditTrail.js" />
     <Content Include="Scripts\app\Dtos\MarketWordingSettingDto.js" />
     <Content Include="Scripts\app\Dtos\SubjectToClauseWordingSettingDto.js" />
@@ -423,7 +422,6 @@
     <Content Include="Scripts\app\ko.bootstrap-carousel.js" />
     <Content Include="Scripts\app\ko.bootstrap-tabs.js" />
     <Content Include="Scripts\app\ko.cancelBubbleClickEvent.js" />
-    <Content Include="Scripts\app\ko.dirtyFlag.js" />
     <None Include="Properties\PublishProfiles\QuickDeploy.pubxml" />
     <Content Include="Scripts\app\ko.dumpObservable.js" />
     <Content Include="Scripts\InitHome.js" />
